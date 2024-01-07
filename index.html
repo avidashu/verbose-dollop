@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ashutosh Shukla | Portfolio</title>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap"
+      rel="stylesheet" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("QgdTwGmvi2_UTGEZm");
+      })();
+    </script>
+    <script type="text/javascript">
+      function validateName() {
+        var fullName = document.getElementById("fullName").value;
+        if (!fullName) {
+          alert("Please enter a valid name.");
+          return false;
+        }
+        return true;
+      }
+
+      function validateEmail() {
+        var email = document.getElementById("email_id").value;
+        if (!email || !isValidEmail(email)) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+        return true;
+      }
+
+      function validateMessage() {
+        var message = document.getElementById("message").value;
+        if (!message) {
+          alert("Please enter a message.");
+          return false;
+        }
+        return true;
+      }
+
+      function isValidEmail(email) {
+        // You can implement a more robust email validation if needed
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      function SendMail() {
+        if (!validateName()) {
+          return;
+        }
+
+        if (!validateEmail()) {
+          return;
+        }
+
+        if (!validateMessage()) {
+          return;
+        }
+
+        // If all validations pass, proceed to send email
+        var params = {
+          from_name: document.getElementById("fullName").value,
+          email_id: document.getElementById("email_id").value,
+          message: document.getElementById("message").value,
+        };
+
+        emailjs
+          .send("service_g0nxmpw", "template_o0625hm", params)
+          .then(function (res) {
+            alert("Ashutosh Recieved Your Message!!");
+          })
+          .catch(function (error) {
+            alert("Error sending email. Please try again later.");
+          });
+      }
+    </script>
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body onLoad="typeWriter()">
+    <nav id="navbar" class="">
+      <div class="nav-wrapper">
+        <!-- Navbar Links -->
+        <ul id="menu">
+          <li><a href="#about" method="post">About</a></li>
+          <li><a href="#skills" method="post">Skills</a></li>
+          <li><a href="#experience" method="post">Projects</a></li>
+          <li><a href="#contact" method="post">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Menu Icon -->
+    <div class="menuIcon">
+      <span class="icon icon-bars"></span>
+      <span class="icon icon-bars overlay"></span>
+    </div>
+
+    <div class="overlay-menu">
+      <ul id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <script src="scripts/script.js"></script>
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-8 col-sm-12 hello">
+            <center>
+              <div class="about-heading">Hello, I'm</div>
+              <h2 id="demo"></h2>
+              <!--
+                    <br>
+                    <img src="Images/me.jpeg">
+                    -->
+              <p>
+                  <a href="#experience">
+                  <button type="button" class="btn btn-success">
+                        See My Projects!
+                      </button>
+                      </a>
+                  <div class="spinner-grow" role="status">
+                    <span class="sr-only"></span></div>
+              </p>
+            </center>
+          </div>
+          <div class="col-lg-6 col-md-4 col-sm-12 about">
+            <h3 class="font-weight-bold">About Me</h3>
+            <p data-aos="fade-in">
+              I am Ashutosh, currently a Final-Year Undergrad, pursuing
+              Information Technology 🤓.
+            </p>
+            <p data-aos="fade-in">
+              My field of interest is Web Development🌟, Wireframing and
+              Competitive Programming.
+            </p>
+            <p data-aos="fade-in">
+              I am also an OpenSource enthusiast. I believe it is a beautiful
+              way of collaborating. I am an active contributor in various
+              projects, helping people in their initiatives.
+            </p>
+            <h6 class="font-weight-bold pt-5">Connect With Me :</h6>
+            <div class="social-media pt-3">
+              <a
+                href="mailto:ashuisavid@gmail.com"
+                class="fa fa-envelope mr-2"
+                aria-hidden="true"
+                data-aos="example-anim3"></a>
+              <a
+                href="https://www.linkedin.com/in/ashutosh-shukla-451183199/"
+                class="fa fa-linkedin mr-2"
+                aria-hidden="true"
+                data-aos="example-anim3"></a>
+              <a
+                href="https://www.instagram.com/ashutosh._.04/"
+                class="fa fa-instagram mr-2"
+                aria-hidden="true"
+                data-aos="example-anim3"></a>
+              <a href="https://github.com/avidashu"
+                ><img src="Images/github.png" data-aos="example-anim3"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="scripts/name.js"></script>
+
+    <!--SkillSet Section-->
+    <section id="skills">
+      <div class="container pt-5">
+        <h1 class="pt-3 pb-2">My Skillset</h1>
+        <hr class="pb-4" />
+        <div class="row" style="text-align: center">
+          <div class="col-lg-6">
+            <div class="skill1">
+              <h4 class="pb-4">Front End Development</h4>
+              <div class="progress my-4">
+                <div
+                  class="progress-bar"
+                  style="width: 90%"
+                  data-aos="fade-right">
+                  HTML(90%)
+                </div>
+              </div>
+              <div class="progress my-4">
+                <div
+                  class="progress-bar"
+                  style="width: 70%"
+                  data-aos="fade-right">
+                  CSS(70%)
+                </div>
+              </div>
+              <div class="progress my-4">
+                <div
+                  class="progress-bar"
+                  style="width: 80%"
+                  data-aos="fade-right">
+                  BootStrap 5(80%)
+                </div>
+              </div>
+              <div class="progress my-4">
+                <div
+                  class="progress-bar"
+                  style="width: 80%"
+                  data-aos="fade-right">
+                  JavaScript(80%)
+                </div>
+              </div>
+              <div class="progress my-4">
+                <div
+                  class="progress-bar"
+                  style="width: 60%"
+                  data-aos="fade-right">
+                  React.js(60%)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="skill2">
+              <h4 class="pb-4">Back End Development</h4>
+              <div class="progress my-4">
+                <div
+                  class="progress-bar"
+                  style="width: 40%"
+                  data-aos="fade-right">
+                  Node.js(40%)
+                </div>
+              </div>
+            </div>
+
+            <div class="skill3">
+              <h4 class="pb-4">Programming Languages</h4>
+              <div class="progress my-4">
+                <div
+                  class="progress-bar"
+                  style="width: 90%"
+                  data-aos="fade-right">
+                  C++ (90%)
+                </div>
+              </div>
+              <div class="progress my-4">
+                <div
+                  class="progress-bar"
+                  style="width: 70%"
+                  data-aos="fade-right">
+                  C(70%)
+                </div>
+              </div>
+              <div class="progress my-4">
+                <div
+                  class="progress-bar"
+                  style="width: 40%"
+                  data-aos="fade-right">
+                  Python(40%)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container pt-5">
+        <h1 class="pt-5 pb-2 text-center">My Projects</h1>
+        <hr class="pb-5" />
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title text-center mb-4">
+                  Foodie - A Food Ordering App 🍜
+                </h3>
+                <p class="card-text">
+                  A dynamic web application featuring a variety of restaurants,
+                  view and search their menus, filter restaurants, and show
+                  network status.
+                </p>
+                <p class="card-text">
+                  Tech Stack: Javascript, React Js, React Custom Hooks, Parcel
+                </p>
+                <a
+                  href="https://github.com/avidashu/NamasteReact"
+                  class="btn btn-primary d-block mx-auto mt-3"
+                  >GitHub 🚀</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title text-center mb-4">
+                  OTT-WebApp [Netflix]🍿
+                </h3>
+                <p class="card-text">
+                  Built a responsive OTT Web App using the MovieDB API to search
+                  and display movies. The data updates weekly on the web app,
+                  featuring Netflix Movie Trailer pop-ups
+                </p>
+                <p class="card-text">
+                  - Tech Stack: ReactJs, React Hooks, JS ES6
+                </p>
+                <a
+                  href="https://github.com/avidashu/Netflix-Clone"
+                  class="btn btn-primary d-block mx-auto mt-3"
+                  >GitHub 🚀</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h3 class="card-title text-center mb-4">
+                  Hostel Registration Portal 🖥️
+                </h3>
+                <p class="card-text">
+                  Created a Registration Portal for students seeking admission
+                  in college hostels. Collaborated with the backend team to
+                  integrate key features.
+                </p>
+                <p class="card-text">
+                  - Implemented Login & Signup, Validation, and other features.
+                </p>
+                <a
+                  href="https://github.com/avidashu/Hostel_Registration.git"
+                  class="btn btn-primary d-block mx-auto mt-3"
+                  >GitHub 🚀</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container pt-5">
+        <h1>Drop a Message!</h1>
+        <hr class="pb-3" width="30%" />
+        <h4 class="pb-5">I'd love to hear from you</h4>
+        <div class="row form">
+          <div class="col-lg-12 pt-3">
+            <form id="contact-form">
+              <div class="row">
+                <div class="col-lg-6 col-sm-12 px-5 pt-4 pb-4">
+                  <input
+                    type="text"
+                    class="form-control no-border"
+                    id="fullName"
+                    name="user_name"
+                    placeholder="Your Name "
+                    required />
+                </div>
+                <div class="col-lg-6 col-sm-12 px-5 pt-4 pb-3">
+                  <input
+                    type="email"
+                    id="email_id"
+                    class="form-control no-border"
+                    placeholder="Your Email Address "
+                    name="user_email"
+                    required />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col p-5">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    class="form-control no-border"
+                    placeholder="Your Message!!"
+                    required></textarea>
+                </div>
+              </div>
+              <center>
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg"
+                  onclick="SendMail()">
+                  Send!!
+                </button>
+              </center>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <hr />
+      <center>
+        <h5 class="footer">
+          Made With ❤ by <a href="#about">Ashutosh Shukla 🚀</a>.
+        </h5>
+      </center>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+    <script src="scripts/animation.js"></script>
+  </body>
+</html>
